@@ -7,7 +7,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class DojoController {
 	// Display text that says 'this dojo is awesome, when 
 	//url is /dojo
-	@RequestMapping("/")
+	@RequestMapping("/{center}")
+	public String showLocation(@PathVariable("center") String center){
+		return "this " + center + " is awesome!";
+	}
+	// @RequestMapping("/{dojocity}-dojo")
+	// public String showDojocity(@PathVariable("dojocity") String center){
+	// 	return dojocity +" Dojo is located in Southern California"
+	// }
+	// @RequestMapping("")
+
 	// Display text Burbank Dojo is located in Southern 
 	//California when url is /burbank-dojo/
 	
